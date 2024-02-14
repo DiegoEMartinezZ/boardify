@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { BoardifyContext } from "../../../context/BoardifyContext";
 
-const Input = () => {
-  return <input type="text" placeholder="New List Name" />;
+const Input = (props) => {
+
+const {inputRef} = useContext(BoardifyContext)
+
+  return <input ref={inputRef} className="bg-aquamarine-950 border-none capitalize"
+  {...props}
+  />;
 };
 
 export default Input;
