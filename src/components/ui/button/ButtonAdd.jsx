@@ -9,7 +9,7 @@ const ButtonAdd = () => {
     <div>
       <button
         onClick={addListWindow}
-        className="2xl:w-full,m-8 m-8 w-4/5 cursor-pointer rounded-full bg-aquamarine-800 p-2.5 text-center "
+        className="my-6 cursor-pointer rounded-full bg-aquamarine-800 p-2.5 text-center "
       >
         <AddText txt={"+ Add a new list"} />
       </button>
