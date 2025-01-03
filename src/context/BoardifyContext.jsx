@@ -26,6 +26,7 @@ export const BoardifyProvider = ({ children }) => {
     Select all the input when clicked
   */
   const inputRef = useRef(null);
+
   const handleInputSelected = () => {
     if (inputRef.current) {
       inputRef.current.select();
@@ -74,8 +75,19 @@ export const BoardifyProvider = ({ children }) => {
   /*
     Window Add List
   */
+
+  const [addList, setAddList] = useState(false);
+  const [nameItem, setNameItem] = useState("");
+  const [arrayNameList, setArrayNameList] = useState([]);
+
   const addListWindow = () => {
-    console.log("se esta oprimiendo el boton de agregar lista");
+    setAddList(!addList);
+  };
+
+  const addItem = () => {
+    setArrayNameList([...arrayNameList, nameItem]);
+    setNameItem("");
+    setAddList(!addList);
   };
 
   return (
@@ -93,6 +105,11 @@ export const BoardifyProvider = ({ children }) => {
         handleAddNewBoard,
         iconToCancel,
         iconToCancelClicked,
+        addList,
+        addItem,
+        nameItem,
+        setNameItem,
+        arrayNameList,
       }}
     >
       {children}
